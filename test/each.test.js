@@ -39,5 +39,15 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
-});
 
+  it('iterates every character of a string, passing the character, its corresponding index, and the entire string to the callback', () => {
+    const str = 'foo';
+    const arr = [];
+    let count = 0;
+    _.each(str, function(char, index, string) {
+      expect(char).toBe(string[index]);
+      count += 1;
+    });
+    expect(count).toBe(3);
+  });
+});

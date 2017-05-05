@@ -13,4 +13,9 @@ describe('reduce()', () => {
     expect(result).toEqual(15);
   });
 
+  it('concatenates an array of strings, *without* an explicit initial value for the accumulator', () => {
+    const strs = ['foo', 'bar', 'baz'];
+    const result = _.reduce(strs, (a, b) => a + b);
+    expect(result).toBe('foobarbaz');
+  });
 });

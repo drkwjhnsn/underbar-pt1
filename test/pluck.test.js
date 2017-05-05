@@ -11,4 +11,17 @@ describe('pluck()', () => {
     expect(result).toEqual([12, 999, 14]);
   });
 
+  it('returns an array of specified objects, given an array of objects with nested objects', () => {
+    const arr = [
+      { num: 1, obj: { foo: 1, bar: 2} },
+      { num: 2, obj: { foo: 3, bar: 4} },
+      { num: 3, obj: { foo: 5, bar: 6} },
+    ];
+    const result = _.pluck(arr, 'obj');
+    expect(result).toEqual([
+      { foo: 1, bar: 2 },
+      { foo: 3, bar: 4 },
+      { foo: 5, bar: 6 },
+    ]);
+  });
 });

@@ -26,4 +26,8 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('returns -1 if value does not appear after the given offset', () => {
+    const arr = ['foo', 'bar', 'baz', 'quux'];
+    expect(_.indexOf(arr, 'foo', 1)).toBe(-1);
+  });
 });
