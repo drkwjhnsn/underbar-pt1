@@ -16,6 +16,12 @@ describe('every()', () => {
       const nums = [1, 3, 5, 6, 7];
       expect(_.every(nums, num => num % 2 === 1)).toBe(false);
     });
+  });
 
+  describe('processing a string of characters', () => {
+    it('returns true if all characters in a string are lowercase and we test for lowercase characters', () => {
+      const string = 'foobar';
+      expect(_.every(string, char => char === char.toLowerCase())).toBe(true);
+    });
   });
 });

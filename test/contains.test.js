@@ -31,4 +31,9 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it ('returns true if the target character is among the characters of a string', () => {
+    const str = 'foobar';
+    const char = 'b';
+    expect(_.contains(str, char)).toBe(true);
+  })
 });

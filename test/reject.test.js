@@ -18,4 +18,9 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+
+  it('returns an empty array when passed an empty array', () => {
+    const ary = [];
+    expect(_.reject(ary, () => false)).toEqual([]);
+  });
 });
